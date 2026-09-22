@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dá pro gasto? — Antes de gastar, pergunte</title>
+  <meta name="description" content="O app responde, todo dia, quanto dá pra gastar hoje. Anota em três segundos, importa o extrato do banco e avisa antes de estourar. Sem senha do banco.">
+  <meta property="og:title" content="Dá pro gasto? — Antes de gastar, pergunte">
+  <meta property="og:description" content="Quanto dá pra gastar hoje, num número só. Sem planilha e sem senha do banco.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/mark.svg" alt="" aria-hidden="true" width="26" height="26">Dá pro gasto?</a>
+      <nav class="nav-links" aria-label="Seções">
+        <a href="#como">Como funciona</a>
+        <a href="#mes">O mês inteiro</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#preco">Preço</a>
+        <a href="#perguntas">Perguntas</a>
+        <a href="suporte/">Suporte</a>
+      </nav>
+      <a class="btn btn-dark btn-sm nav-cta" href="#preco">Testar 1 mês grátis</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu-mobile">Menu</button>
+    </div>
+    <nav id="menu-mobile" class="nav-mobile" aria-label="Seções (celular)">
+      <a href="#como">Como funciona</a>
+      <a href="#mes">O mês inteiro</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#preco">Preço</a>
+      <a href="#perguntas">Perguntas</a>
+      <a href="suporte/">Suporte</a>
+      <a class="btn btn-dark" href="#preco">Testar 1 mês grátis</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao hero" style="padding-block-start:0">
+      <div class="wrap">
+        <h1>Antes de gastar, pergunte.</h1>
+        <p class="lead">O app responde na hora quanto dá pra gastar hoje. Você anota em três segundos, importa o extrato do banco e ele avisa antes de estourar.</p>
+        <div class="acoes">
+          <a class="btn btn-dark" href="#preco">Testar 1 mês grátis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-linha" href="#como">Ver como funciona</a>
+        </div>
+        <p class="nota">Em breve na App Store e no Google Play.</p>
+
+        <div class="palco">
+          <div class="flutua flutua--a"><b>Gasto anotado</b><span class="peq">Mercado · R$ 45,90 · em 3 segundos</span></div>
+          <div class="flutua flutua--b"><b>Guardião</b><span class="peq">Orçamento em 80%. Segura a onda.</span></div>
+          <div class="fone">
+            <img src="assets/img/screenshots/home.png" width="750" height="1141"
+                 alt="Tela inicial do app: saldo do mês, quanto entrou e saiu, e a linha Dá pro gasto hoje.">
+          </div>
+        </div>
+
+        <div class="fatos">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Sem senha do banco</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.7"/></svg>Funciona offline</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>1 mês grátis</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Sem anúncio</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao reveal" id="como">
+      <div class="wrap duas">
+        <div class="texto">
+          <h2 class="titulo">Um número por dia. Sem conta de cabeça.</h2>
+          <p class="lead" style="margin-top:var(--g-4)">Você diz quanto entra e quando o salário cai. O app divide o que sobrou do orçamento pelos dias que faltam, e refaz essa conta a cada gasto que você anota.</p>
+          <a class="btn btn-dark" href="#preco" style="margin-top:var(--g-6)">Quero meu número do dia
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="painel">
+          <p class="rotulo">Pode gastar hoje</p>
+          <p class="numerao num" id="a1Num">R$ 96,08</p>
+          <p class="sub" id="a1Sub">R$ 52,00 gastos hoje · faltam 17 dias</p>
+          <div class="barra"><i id="a1Meter"></i></div>
+          <p class="sub" id="a1Budget">R$ 2.918,60 de R$ 4.500,00</p>
+          <div style="margin-top:var(--g-6);border-top:1px solid var(--g-linha);padding-top:var(--g-2)">
+            <div class="linha-item"><div class="t"><b>Mercado</b><span>segunda, dia 13</span></div><span class="v">R$ 120,00</span></div>
+            <div class="linha-item marca-nova"><div class="t"><b>iFood</b><span>hoje, agora</span></div><span class="v">R$ 52,00</span></div>
+          </div>
+          <p class="sub"><span class="demo">Mês de demonstração</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao faixa reveal" id="mes">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2 class="titulo">Trinta dias em dez segundos.</h2>
+          <p class="lead">Arraste e veja o mês correr. A conta é a mesma que roda dentro do app.</p>
+        </div>
+        <div class="painel" style="max-width:44rem;margin:0 auto">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--g-4);flex-wrap:wrap">
+            <div>
+              <p class="rotulo">Pode gastar hoje</p>
+              <p class="numerao num" id="pNum">R$ 96,08</p>
+            </div>
+            <p id="pVer" style="font-size:var(--g-t-xl);font-weight:700;letter-spacing:-.03em;margin:0;color:var(--g-verde)">Dá.</p>
+          </div>
+          <p class="sub" id="pSub">dia 14 · faltam 17 dias</p>
+
+          <div class="mes" id="grid" aria-hidden="true"></div>
+          <div class="legenda">
+            <span><i style="background:#A9DCC0"></i>dia dentro do permitido</span>
+            <span><i style="background:#F0BDB5"></i>dia acima</span>
+            <span><i style="background:#F2F5F2;box-shadow:inset 0 0 0 1px #E0E6E0"></i>ainda não chegou</span>
+          </div>
+
+          <label for="dia" class="rotulo" style="display:block;margin-top:var(--g-6)">Arraste o mês</label>
+          <input type="range" id="dia" min="1" max="30" value="14" class="scrub" aria-describedby="pSub">
+
+          <div class="gasto">
+            <p class="rotulo">Já gasto no mês</p>
+            <div class="barra"><i id="pMeter"></i></div>
+            <p class="sub" id="pBudget">R$ 2.918,60 de R$ 4.500,00 · <span class="demo">mês de demonstração</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao reveal">
+      <div class="wrap duas duas--inv">
+        <div class="texto">
+          <h2 class="titulo">Manda o extrato. Ele organiza.</h2>
+          <p class="lead" style="margin-top:var(--g-4)">Exporte o OFX ou CSV no app do banco e traga tudo de uma vez. O app categoriza sozinho, aprende com as suas correções e nunca importa o mesmo gasto duas vezes.</p>
+        </div>
+        <div class="painel painel--suave">
+          <div class="linha-item"><div class="t"><b>IFOOD *RESTAURANTE</b><span>Comida · sugerido</span></div><span class="v">R$ 52,00</span></div>
+          <div class="linha-item"><div class="t"><b>UBER *TRIP</b><span>Transporte · sugerido</span></div><span class="v">R$ 18,40</span></div>
+          <div class="linha-item"><div class="t"><b>PAG*SPOTIFY</b><span>Assinaturas</span></div><span class="v">R$ 21,90</span></div>
+          <div class="linha-item" style="opacity:.5"><div class="t"><b>PAG*SPOTIFY</b><span>já estava no app</span></div><span class="v">repetido</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao reveal" id="recursos">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2 class="titulo">Tudo o que faz sentido no dia a dia.</h2>
+          <p class="lead">E nada do que não faz.</p>
+        </div>
+        <div class="recursos">
+
+          <div class="recurso">
+            <h3>Cartão, fatura e parcelas.</h3>
+            <p>Fechamento, vencimento e compras em até 24 vezes, lançadas mês a mês. Pagar a fatura não conta como gasto de novo.</p>
+            <div class="painel">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--g-4)">
+                <p class="rotulo">Cartão exemplo</p>
+                <span class="pill pill--ouro">fecha em 6 dias</span>
+              </div>
+              <p class="numerao num" style="font-size:2rem">R$ 1.284,50</p>
+              <div class="linha-item"><div class="t"><b>Geladeira</b><span>parcela 3 de 10</span></div><span class="v">R$ 389,90</span></div>
+              <div class="linha-item"><div class="t"><b>Passagem</b><span>parcela 1 de 4</span></div><span class="v">R$ 212,00</span></div>
+            </div>
+          </div>
+
+          <div class="recurso">
+            <h3>Seis agentes de olho.</h3>
+            <p>Guardião, Lembrete, Faro, Vigia, Radar e Cronista. Cada um cuida de uma coisa, e você desliga quem não quiser ouvir.</p>
+            <div class="avisos">
+              <div class="notif"><span class="ic" style="background:#FFF4D6;color:#8A6108"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div class="t"><small>Guardião</small><b>Orçamento em 80%</b>Sobram R$ 900 até o dia 5.</div></div>
+              <div class="notif"><span class="ic" style="background:#E9F5EE;color:#1E8A5C"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></span><div class="t"><small>Lembrete</small><b>Fatura vence em 3 dias</b>Cartão exemplo · R$ 1.284,50</div></div>
+              <div class="notif"><span class="ic" style="background:#FBEAEA;color:#C43D3D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 9h12v12H9zM5 15V5a2 2 0 0 1 2-2h10"/></svg></span><div class="t"><small>Vigia</small><b>Cobrança parece duplicada</b>R$ 52,00 em Comida, com 2 minutos de diferença.</div></div>
+            </div>
+          </div>
+
+          <div class="recurso">
+            <h3>Radar de assinaturas.</h3>
+            <p>Acha o que se repete todo mês no extrato e avisa quando o preço muda. Vira lançamento fixo com um toque.</p>
+            <div class="painel">
+              <div class="linha-item"><div class="t"><b>Netflix</b><span>R$ 59,90 por mês</span></div><span class="pill pill--ouro">preço mudou</span></div>
+              <div class="linha-item"><div class="t"><b>Spotify</b><span>R$ 21,90 por mês</span></div><span class="pill pill--cinza">já é fixo</span></div>
+              <div class="linha-item"><div class="t"><b>iCloud</b><span>R$ 4,90 por mês</span></div><span class="pill pill--verde">novo</span></div>
+              <p class="sub">R$ 86,70 por mês em assinaturas</p>
+            </div>
+          </div>
+
+          <div class="recurso">
+            <h3>Pergunte sobre seus gastos.</h3>
+            <p>Um chat com IA que responde com base nos seus próprios lançamentos. Incluído na assinatura.</p>
+            <div class="avisos">
+              <div class="bolha bolha--eu">quanto gastei com delivery esse mês?</div>
+              <div class="bolha bolha--ia"><small>Dá pro gasto?</small>R$ 312,40 em 9 pedidos, 28% a mais que no mês passado.</div>
+              <div class="bolha bolha--eu">consigo guardar 500 até dezembro?</div>
+              <div class="bolha bolha--ia"><small>Dá pro gasto?</small>Consegue: R$ 125 por mês. Cortar metade do delivery já cobre.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="secao faixa reveal">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2 class="titulo">Uma pergunta por dia.</h2>
+          <p class="lead">Sem menu, sem planilha, sem curva de aprendizado.</p>
+        </div>
+        <div class="passos">
+          <div class="passo"><div class="n">1</div><b>Diga quanto entra</b><span>e o dia em que cai</span></div>
+          <div class="passo"><div class="n">2</div><b>Anote ou importe</b><span>3 segundos ou o extrato inteiro</span></div>
+          <div class="passo"><div class="n">3</div><b>Veja o número do dia</b><span>quanto dá pra gastar hoje</span></div>
+          <div class="passo"><div class="n">4</div><b>Os agentes avisam</b><span>antes de doer</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao escuro reveal">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2 class="titulo">Seu dinheiro é assunto seu.</h2>
+          <p class="lead">Os lançamentos nascem e ficam no seu celular. Nada sobe sem você mandar.</p>
+        </div>
+        <div class="confia">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/></svg><b>No seu aparelho</b><span>Funciona offline, sem servidor no meio.</span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Sem senha do banco</b><span>Você anota ou importa o extrato. Só isso.</span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><b>Sem anúncio</b><span>Não vendemos nem compartilhamos dados.</span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg><b>Apague quando quiser</b><span>Dados e conta, direto pelo app.</span></div>
+        </div>
+        <div style="text-align:center;margin-top:var(--g-7)">
+          <a class="btn btn-light" href="privacidade/">Ler a política de privacidade</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao reveal" id="preco">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2 class="titulo">Menos que um café por semana.</h2>
+          <p class="lead">O app inteiro, sem limite e sem anúncio. 1 mês grátis pra testar.</p>
+        </div>
+        <div class="planos">
+          <div class="plano plano--melhor">
+            <span class="selo">Melhor preço</span>
+            <p class="rotulo">Anual</p>
+            <p class="preco num">R$ 9,99 <small>/mês</small></p>
+            <p class="sub">R$ 119,90 por ano · economize 50%</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Número do dia e orçamento pelo salário</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Contas, cartões, fatura e parcelas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Importar extrato OFX e CSV</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Seis agentes e radar de assinaturas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Análise com projeção do mês</li>
+            </ul>
+            <a class="btn btn-verde" href="#comecar">Começar 1 mês grátis</a>
+          </div>
+          <div class="plano">
+            <p class="rotulo">Mensal</p>
+            <p class="preco num">R$ 19,90 <small>/mês</small></p>
+            <p class="sub">Cobrado todo mês</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tudo o que está no anual</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Cancele quando quiser</li>
+            </ul>
+            <a class="btn btn-linha" href="#comecar">Começar 1 mês grátis</a>
+          </div>
+        </div>
+        <div class="garantia">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><b>1 mês por nossa conta.</b> Você só paga se continuar depois do teste, e cancela quando quiser pelos ajustes do celular. Cobrado pela App Store ou Google Play.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao reveal" id="perguntas">
+      <div class="wrap">
+        <div class="cabeca"><h2 class="titulo">Perguntas frequentes.</h2></div>
+        <div class="faq">
+          <details><summary>O app se conecta ao meu banco?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Não. Ele não pede senha nem acesso à sua conta. Você anota os gastos ou exporta o extrato no app do banco (OFX ou CSV) e importa aqui, que o app categoriza e evita repetidos.</p></details>
+          <details><summary>Onde ficam os meus dados?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No seu celular, num banco de dados local. Se você criar uma conta e tocar em “enter para a nuvem”, uma cópia vai para a sua conta. Nada sobe sozinho.</p></details>
+          <details><summary>Preciso criar conta?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Não. O app funciona inteiro sem conta. A conta serve para guardar um backup na nuvem, recuperar os dados em outro celular e usar o chat.</p></details>
+          <details><summary>O que o chat envia?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Quando você faz uma pergunta, o app envia um resumo: totais do mês, categorias, contas, assinaturas e os últimos lançamentos. Esse resumo vai para o nosso servidor e para o provedor de IA, que responde. Não guardamos a pergunta nem a resposta, só a contagem diária.</p></details>
+          <details><summary>Funciona sem internet?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Sim. Tudo, menos o chat e o backup na nuvem, roda offline.</p></details>
+          <details><summary>Como cancelo?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Pelos ajustes de assinatura do iPhone ou da Play Store, a qualquer momento. O acesso continua até o fim do período já pago.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao fecho" id="comecar">
+      <div class="wrap">
+        <h2 class="titulo" style="max-width:20ch;margin-inline:auto">Quanto entra por mês?</h2>
+        <p class="lead" style="margin:var(--g-4) auto 0;max-width:36ch">Responda aqui e eu te digo, agora, quanto daria pra gastar por dia.</p>
+        <div class="campo">
+          <span aria-hidden="true">R$</span>
+          <input id="entra" type="text" inputmode="decimal" autocomplete="off" placeholder="4.500,00" aria-label="Quanto entra por mês, em reais">
+          <button type="button" class="btn btn-dark btn-sm" id="responder">Responder</button>
+        </div>
+        <p class="resposta" id="saida" role="status" aria-live="polite">A conta se refaz a cada gasto que você anotar.</p>
+        <a class="btn btn-verde" href="#preco">Testar 1 mês grátis
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="nota">Em breve na App Store e no Google Play · cancele quando quiser</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/mark.svg" alt="" aria-hidden="true" width="26" height="26">Dá pro gasto?</a>
+      <nav class="links" aria-label="Rodapé">
+        <a href="privacidade/">Privacidade</a>
+        <a href="termos/">Termos</a>
+        <a href="suporte/">Suporte</a>
+        <a href="mailto:oi@daprogasto.app.br">oi@daprogasto.app.br</a>
+      </nav>
+      <span class="copy">Feito no Brasil · © <span data-year>2026</span></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+  /* A mesma conta do app: safeToSpendPerDay, em lib/logic.ts.
+     Os trinta dias são um mês de exemplo, rotulado na página como demonstração. */
+  (function () {
+    var DIAS = 30, ORCAMENTO = 450000;
+    var GASTOS = [188500,4590,0,11990,5200,0,8990,4500,38990,6700,0,5200,12000,5200,0,9800,4500,15200,0,7400,3200,0,5600,4100,0,6200,3800,0,4500,3900];
+
+    function safeToSpendPerDay(orcamento, gasto, faltam) {
+      if (orcamento <= 0 || faltam <= 0) return 0;
+      var resto = orcamento - gasto;
+      return resto <= 0 ? 0 : Math.floor(resto / faltam);
+    }
+    var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    function money(c) { return brl.format(c / 100); }
+    function gastoAntes(d) { var s = 0; for (var i = 0; i < d - 1; i++) s += GASTOS[i]; return s; }
+    function estado(d) {
+      var antes = gastoAntes(d), faltam = DIAS - d + 1;
+      var permitido = safeToSpendPerDay(ORCAMENTO, antes, faltam);
+      var hoje = GASTOS[d - 1] || 0;
+      return { dia: d, faltam: faltam, permitido: permitido, hoje: hoje,
+               acumulado: antes + hoje, deu: permitido > 0 && hoje <= permitido };
+    }
+    var $ = function (id) { return document.getElementById(id); };
+
+    var e14 = estado(14);
+    $('a1Num').textContent = money(e14.permitido);
+    $('a1Sub').textContent = money(e14.hoje) + ' gastos hoje · faltam ' + e14.faltam + ' dias';
+    $('a1Meter').style.width = Math.min(100, (e14.acumulado / ORCAMENTO) * 100) + '%';
+    $('a1Budget').textContent = money(e14.acumulado) + ' de ' + money(ORCAMENTO);
+
+    var grid = $('grid');
+    for (var d = 1; d <= DIAS; d++) { var c = document.createElement('div'); c.className = 'dia'; grid.appendChild(c); }
+    var celulas = Array.prototype.slice.call(grid.children);
+    var slider = $('dia');
+
+    function desenhar() {
+      var e = estado(Number(slider.value));
+      $('pNum').textContent = money(e.permitido);
+      $('pVer').textContent = e.deu ? 'Dá.' : 'Não dá.';
+      $('pVer').style.color = e.deu ? 'var(--g-verde)' : 'var(--g-suave)';
+      $('pSub').textContent = 'dia ' + e.dia + ' · faltam ' + e.faltam + ' dias';
+      $('pMeter').style.width = Math.min(100, (e.acumulado / ORCAMENTO) * 100) + '%';
+      $('pBudget').innerHTML = money(e.acumulado) + ' de ' + money(ORCAMENTO) + ' · <span class="demo">mês de demonstração</span>';
+      celulas.forEach(function (cel, i) {
+        var dd = i + 1, passou = dd <= e.dia;
+        cel.dataset.on = passou ? '1' : '0';
+        cel.dataset.over = passou && !estado(dd).deu ? '1' : '0';
+        cel.dataset.now = dd === e.dia ? '1' : '0';
+      });
+    }
+    slider.addEventListener('input', desenhar);
+    desenhar();
+
+    function responder() {
+      var cru = $('entra').value.replace(/\./g, '').replace(',', '.').replace(/[^\d.]/g, '');
+      var reais = parseFloat(cru);
+      if (!isFinite(reais) || reais <= 0) { $('saida').textContent = 'Escreva um valor maior que zero, como 4.500,00.'; return; }
+      var permitido = safeToSpendPerDay(Math.round(reais * 100), 0, DIAS);
+      $('saida').innerHTML = 'No primeiro dia do ciclo, dá pra gastar <b>' + money(permitido) + '</b> por dia. A cada gasto que você anotar, essa conta se refaz.';
+    }
+    $('responder').addEventListener('click', responder);
+    $('entra').addEventListener('keydown', function (ev) { if (ev.key === 'Enter') responder(); });
+  })();
+  </script>
+</body>
+</html>
