@@ -8,7 +8,7 @@
   <meta property="og:title" content="Dá pro gasto? — Antes de gastar, pergunte">
   <meta property="og:description" content="Quanto dá pra gastar hoje, num número só. Sem planilha e sem senha do banco.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/img/apple-touch-icon.png">
+  <meta property="og:image" content="https://diogolepri.github.io/daprogasto-site/assets/img/apple-touch-icon.png">
   <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -44,8 +44,10 @@
   </header>
 
   <main>
-    <section class="secao hero" style="padding-block-start:0">
+    <section class="secao hero">
       <div class="wrap">
+        <div class="hero-grid">
+         <div class="hero-texto">
         <h1>Antes de gastar, pergunte.</h1>
         <p class="lead">O app responde na hora quanto dá pra gastar hoje. Você anota em três segundos, importa o extrato do banco e ele avisa antes de estourar.</p>
         <div class="acoes">
@@ -56,12 +58,29 @@
         </div>
         <p class="nota">Em breve na App Store e no Google Play.</p>
 
-        <div class="palco">
-          <div class="flutua flutua--a"><b>Gasto anotado</b><span class="peq">Mercado · R$ 45,90 · em 3 segundos</span></div>
-          <div class="flutua flutua--b"><b>Guardião</b><span class="peq">Orçamento em 80%. Segura a onda.</span></div>
-          <div class="fone">
-            <img src="assets/img/screenshots/home.png" width="750" height="1141"
-                 alt="Tela inicial do app: saldo do mês, quanto entrou e saiu, e a linha Dá pro gasto hoje.">
+         </div>
+
+          <div class="palco">
+            <div class="palco-janela">
+              <div class="fone">
+                <i class="fone-tecla fone-tecla--acao" aria-hidden="true"></i>
+                <i class="fone-tecla fone-tecla--vol-mais" aria-hidden="true"></i>
+                <i class="fone-tecla fone-tecla--vol-menos" aria-hidden="true"></i>
+                <i class="fone-tecla fone-tecla--power" aria-hidden="true"></i>
+                <div class="fone-corpo">
+                  <div class="fone-vidro">
+                    <div class="fone-tela">
+                      <img src="assets/img/screenshots/home.png" width="750" height="1141"
+                           fetchpriority="high" decoding="async"
+                           alt="Tela inicial do app: saldo do mês, quanto entrou e saiu, e a linha Dá pro gasto hoje.">
+                      <span class="fone-brilho" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flutua flutua--a"><b>Gasto anotado</b><span class="peq">Mercado · R$ 45,90 · em 3 segundos</span></div>
+            <div class="flutua flutua--b"><b>Guardião</b><span class="peq">Orçamento em 80%. Segura a onda.</span></div>
           </div>
         </div>
 
@@ -83,7 +102,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
-        <div class="painel">
+        <div class="painel painel--sangra">
           <p class="rotulo">Pode gastar hoje</p>
           <p class="numerao num" id="a1Num">R$ 96,08</p>
           <p class="sub" id="a1Sub">R$ 52,00 gastos hoje · faltam 17 dias</p>
@@ -104,7 +123,7 @@
           <h2 class="titulo">Trinta dias em dez segundos.</h2>
           <p class="lead">Arraste e veja o mês correr. A conta é a mesma que roda dentro do app.</p>
         </div>
-        <div class="painel" style="max-width:44rem;margin:0 auto">
+        <div class="painel painel--mes painel--sangra">
           <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--g-4);flex-wrap:wrap">
             <div>
               <p class="rotulo">Pode gastar hoje</p>
@@ -139,7 +158,7 @@
           <h2 class="titulo">Manda o extrato. Ele organiza.</h2>
           <p class="lead" style="margin-top:var(--g-4)">Exporte o OFX ou CSV no app do banco e traga tudo de uma vez. O app categoriza sozinho, aprende com as suas correções e nunca importa o mesmo gasto duas vezes.</p>
         </div>
-        <div class="painel painel--suave">
+        <div class="painel painel--suave painel--sangra">
           <div class="linha-item"><div class="t"><b>IFOOD *RESTAURANTE</b><span>Comida · sugerido</span></div><span class="v">R$ 52,00</span></div>
           <div class="linha-item"><div class="t"><b>UBER *TRIP</b><span>Transporte · sugerido</span></div><span class="v">R$ 18,40</span></div>
           <div class="linha-item"><div class="t"><b>PAG*SPOTIFY</b><span>Assinaturas</span></div><span class="v">R$ 21,90</span></div>
@@ -150,7 +169,7 @@
 
     <section class="secao reveal" id="recursos">
       <div class="wrap">
-        <div class="cabeca">
+        <div class="cabeca cabeca--trilho">
           <h2 class="titulo">Tudo o que faz sentido no dia a dia.</h2>
           <p class="lead">E nada do que não faz.</p>
         </div>
@@ -208,7 +227,7 @@
 
     <section class="secao faixa reveal">
       <div class="wrap">
-        <div class="cabeca">
+        <div class="cabeca cabeca--trilho">
           <h2 class="titulo">Uma pergunta por dia.</h2>
           <p class="lead">Sem menu, sem planilha, sem curva de aprendizado.</p>
         </div>
@@ -239,7 +258,7 @@
       </div>
     </section>
 
-    <section class="secao reveal" id="preco">
+    <section class="secao secao--ar reveal" id="preco">
       <div class="wrap">
         <div class="cabeca">
           <h2 class="titulo">Menos que um café por semana.</h2>
@@ -278,7 +297,7 @@
       </div>
     </section>
 
-    <section class="secao reveal" id="perguntas">
+    <section class="secao secao--denso reveal" id="perguntas">
       <div class="wrap">
         <div class="cabeca"><h2 class="titulo">Perguntas frequentes.</h2></div>
         <div class="faq">
@@ -292,7 +311,7 @@
       </div>
     </section>
 
-    <section class="secao fecho" id="comecar">
+    <section class="secao secao--ar fecho" id="comecar">
       <div class="wrap">
         <h2 class="titulo" style="max-width:20ch;margin-inline:auto">Quanto entra por mês?</h2>
         <p class="lead" style="margin:var(--g-4) auto 0;max-width:36ch">Responda aqui e eu te digo, agora, quanto daria pra gastar por dia.</p>

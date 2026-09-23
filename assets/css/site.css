@@ -21,7 +21,7 @@
   --g-t-xs: .76rem;
   --g-t-sm: .9rem;
   --g-t-base: 1.02rem;
-  --g-t-lg: clamp(1.1rem, 1rem + .5vw, 1.3rem);
+  --g-t-lg: clamp(1.1rem, 1rem + .6vw, 1.42rem);
   --g-t-xl: clamp(1.5rem, 1.2rem + 1.1vw, 2rem);
 
   --g-1: .25rem; --g-2: .5rem;  --g-3: .75rem; --g-4: 1rem;
@@ -29,7 +29,7 @@
   --g-9: 6rem;
 
   --g-gutter: clamp(1.25rem, 5vw, 3.5rem);
-  --g-secao: clamp(4rem, 8vw, 7rem);
+  --g-secao: clamp(3.25rem, 7.5vw, 7rem);
   --g-max: 78rem;
 
   --g-r-sm: 6px; --g-r-md: 14px; --g-r-lg: 22px;
@@ -76,6 +76,10 @@ h1, h2, h3 { font-family: var(--g-fonte); color: var(--g-ink); margin: 0; font-w
 .nav-links a { color: inherit; }
 .nav-links a:hover { color: var(--g-ink); text-decoration: none; }
 .nav-cta { margin-left: auto; }
+/* abaixo de 560px nao cabem marca + botao + menu: o botao ja esta no menu */
+/* .btn define display depois daqui e media query nao soma especificidade:
+   por isso o seletor precisa de dois niveis para vencer. */
+@media (max-width: 559px) { .nav .nav-cta { display: none; } .nav .menu-btn { margin-left: auto; } }
 @media (min-width: 900px) { .nav-links { display: flex; } .nav-cta { margin-left: var(--g-4); } .menu-btn { display: none; } }
 .menu-btn { margin-left: auto; background: none; border: 1px solid var(--g-linha); border-radius: 999px; padding: .4rem .8rem; font: inherit; font-size: var(--g-t-sm); color: var(--g-ink); }
 .nav-mobile { display: none; flex-direction: column; gap: var(--g-3); padding: var(--g-4) var(--g-gutter) var(--g-5); }
@@ -95,21 +99,107 @@ h1, h2, h3 { font-family: var(--g-fonte); color: var(--g-ink); margin: 0; font-w
 
 /* ----------------------------------------------------------------- hero -- */
 .hero { text-align: center; padding-block: clamp(2.5rem, 7vw, 5rem) 0; }
-.hero h1 { font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -.045em; line-height: 1.02; max-width: 14ch; margin-inline: auto; }
+.hero h1 { font-size: clamp(2.6rem, 5.2vw + 1.4rem, 5rem); letter-spacing: -.045em; line-height: 1.02; max-width: 14ch; margin-inline: auto; }
 .hero .lead { margin: var(--g-5) auto 0; max-width: 38ch; }
 .acoes { display: flex; gap: var(--g-3); justify-content: center; flex-wrap: wrap; margin-top: var(--g-6); }
 .nota { margin-top: var(--g-4); font-size: var(--g-t-sm); color: var(--g-suave); }
 
-.palco { position: relative; margin-top: clamp(2.5rem, 6vw, 4.5rem); display: grid; place-items: center; }
-.palco::before { content: ""; position: absolute; inset: 14% 10% 6%; z-index: 0; background: radial-gradient(closest-side, #CFEBDC, transparent 72%); filter: blur(8px); }
-.fone { position: relative; z-index: 1; width: min(300px, 74vw); border-radius: 42px; padding: 9px; background: var(--g-ink); box-shadow: var(--g-e3); }
-.fone img { border-radius: 34px; width: 100%; height: auto; }
-.flutua { position: absolute; z-index: 2; background: #fff; border: 1px solid var(--g-linha); border-radius: 16px; box-shadow: var(--g-e2); padding: .7rem .9rem; font-size: var(--g-t-sm); line-height: 1.35; text-align: left; display: none; max-width: 15rem; }
+/* ---------------------------------------------------- o aparelho -------- --
+   A captura JA TEM uma ilha dinamica real e na proporcao certa: a moldura
+   entra por fora e nao desenha ilha nenhuma. Ilha dupla e o defeito numero um
+   de mockup falso.
+   A captura e 1:1,52 e um iPhone e 1:2,17, entao o aparelho afunda atras da
+   faixa de garantias: as duas proporcoes ficam verdadeiras ao mesmo tempo. */
+.palco {
+  position: relative;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  display: grid; place-items: center;
+  --fone-w: min(238px, 60vw);
+  --fone-ratio: 2.1679;
+  --fone-h: calc(var(--fone-w) * var(--fone-ratio));
+  --fone-r: calc(var(--fone-w) * .152);
+  --fone-rail: calc(var(--fone-w) * .0075);
+  --fone-bezel: calc(var(--fone-w) * .0185);
+  --fone-corte: .63;
+  --fone-ar: 2.5rem;
+}
+.palco::before {
+  content: ""; position: absolute; inset: 6% 6% 0; z-index: 0;
+  background: radial-gradient(58% 52% at 50% 34%, #CFEBDC 0%, rgba(207,235,220,0) 72%);
+}
+.palco-janela {
+  position: relative; z-index: 1;
+  overflow: hidden;
+  padding: var(--fone-ar) 3rem 0;
+  height: calc(var(--fone-ar) + var(--fone-h) * var(--fone-corte));
+  display: grid; place-items: start center;
+}
+.fone { position: relative; width: var(--fone-w); height: var(--fone-h); }
+/* o corpo pinta por cima das teclas, entao so a metade externa delas aparece */
+.fone-corpo {
+  position: relative; height: 100%;
+  border-radius: var(--fone-r);
+  padding: var(--fone-rail);
+  background: linear-gradient(104deg, #6E7873 0%, #C9D1CB 9%, #8A938C 20%, #4E554F 37%,
+    #737C76 52%, #A8B1AA 68%, #DFE5E0 82%, #737C76 92%, #545B55 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(255,255,255,.20),
+    0 1px 2px rgba(11,15,12,.10), 0 10px 20px -8px rgba(11,15,12,.16),
+    0 34px 56px -20px rgba(11,15,12,.28), 0 70px 110px -48px rgba(11,15,12,.24);
+}
+.fone-vidro {
+  height: 100%;
+  border-radius: calc(var(--fone-r) - var(--fone-rail));
+  padding: var(--fone-bezel);
+  background: #070A08;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
+}
+.fone-tela {
+  position: relative; height: 100%; overflow: hidden;
+  border-radius: calc(var(--fone-r) - var(--fone-rail) - var(--fone-bezel));
+  background: #F7F7F4;            /* mesmo fundo da captura: emenda sem costura */
+}
+.fone-tela img { width: 100%; height: auto; display: block; }
+.fone-brilho {
+  position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background:
+    linear-gradient(107deg, rgba(255,255,255,.50) 0 11%, rgba(255,255,255,0) 11% 15%,
+      rgba(255,255,255,.22) 15% 21%, rgba(255,255,255,0) 21% 46%, rgba(11,15,12,.045) 46% 100%),
+    radial-gradient(130% 80% at 50% -12%, rgba(255,255,255,.40), transparent 46%);
+  mix-blend-mode: overlay; opacity: .9;
+}
+@supports not (mix-blend-mode: overlay) { .fone-brilho { opacity: .55; } }
+.fone-tecla {
+  position: absolute; width: calc(var(--fone-w) * .013); border-radius: 3px;
+  background: linear-gradient(90deg, #4F5651, #A9B2AB 45%, #6E7670);
+  box-shadow: 0 1px 1px rgba(11,15,12,.25);
+}
+.fone-tecla--acao, .fone-tecla--vol-mais, .fone-tecla--vol-menos {
+  left: calc(var(--fone-w) * -.007); border-radius: 3px 0 0 3px;
+}
+.fone-tecla--power {
+  right: calc(var(--fone-w) * -.007); border-radius: 0 3px 3px 0;
+  background: linear-gradient(270deg, #4F5651, #A9B2AB 45%, #6E7670);
+}
+.fone-tecla--acao { top: 14.7%; height: 3.8%; }
+.fone-tecla--vol-mais { top: 20.5%; height: 7%; }
+.fone-tecla--vol-menos { top: 28.9%; height: 7%; }
+.fone-tecla--power { top: 22.3%; height: 11.7%; }
+
+/* cartoes de prova: no celular so um, sangrando na gutter */
+.flutua {
+  position: absolute; z-index: 2; background: #fff; border: 1px solid var(--g-linha);
+  border-radius: 16px; box-shadow: var(--g-e2); padding: .55rem .7rem;
+  font-size: var(--g-t-xs); line-height: 1.35; text-align: left; max-width: 9.5rem;
+}
 .flutua b { display: block; color: var(--g-ink); }
 .flutua .peq { color: var(--g-suave); font-size: var(--g-t-xs); }
-.flutua--a { left: 12%; top: 20%; transform: rotate(-3deg); }
-.flutua--b { right: 11%; top: 52%; transform: rotate(2.5deg); }
-@media (min-width: 1100px) { .flutua { display: block; } }
+.flutua--a { left: -.6rem; top: 74%; transform: rotate(-3deg); }
+.flutua--b { display: none; }
+@media (min-width: 1024px) {
+  .flutua { max-width: 15rem; font-size: var(--g-t-sm); padding: .7rem .9rem; }
+  .flutua--a { left: -26%; top: 13%; }
+  .flutua--b { display: block; right: -22%; top: 44%; transform: rotate(2.5deg); }
+}
 
 .fatos { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--g-4) var(--g-7); margin-top: clamp(2.5rem, 6vw, 4rem); padding-block: var(--g-5); border-top: 1px solid var(--g-linha); border-bottom: 1px solid var(--g-linha); color: var(--g-suave); font-size: var(--g-t-sm); }
 .fatos span { display: inline-flex; align-items: center; gap: .5rem; }
@@ -123,7 +213,8 @@ h1, h2, h3 { font-family: var(--g-fonte); color: var(--g-ink); margin: 0; font-w
 @media (min-width: 900px) { .duas { grid-template-columns: 1fr 1fr; gap: var(--g-9); } .duas--inv .texto { order: 2; } }
 .faixa { background: var(--g-soft); }
 
-.painel { background: #fff; border: 1px solid var(--g-linha); border-radius: var(--g-r-lg); box-shadow: var(--g-e2); padding: var(--g-6); }
+.painel { background: #fff; border: 1px solid var(--g-linha); border-radius: var(--g-r-lg); box-shadow: var(--g-e2); padding: clamp(1.15rem, 4vw, 2rem); }
+.painel--mes { max-width: 44rem; margin-inline: auto; }
 .painel--suave { background: var(--g-soft); box-shadow: none; }
 .numerao { font-size: clamp(2.4rem, 7vw, 3.6rem); font-weight: 700; letter-spacing: -.045em; line-height: 1; margin: var(--g-2) 0 0; color: var(--g-ink); font-variant-numeric: tabular-nums; }
 .barra { height: 7px; border-radius: 4px; background: #EDF0EC; overflow: hidden; margin-top: var(--g-3); }
@@ -139,7 +230,7 @@ h1, h2, h3 { font-family: var(--g-fonte); color: var(--g-ink); margin: 0; font-w
 
 /* o mês que a pessoa arrasta */
 .mes { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-top: var(--g-5); }
-@media (max-width: 560px) { .mes { grid-template-columns: repeat(6, 1fr); } }
+
 .dia { aspect-ratio: 1; border-radius: 5px; background: #F2F5F2; box-shadow: inset 0 0 0 1px #E0E6E0; transition: background 160ms var(--g-ease); }
 .dia[data-on="1"] { background: #A9DCC0; box-shadow: inset 0 0 0 1px #8ECFAB; }
 .dia[data-over="1"] { background: #F0BDB5; box-shadow: inset 0 0 0 1px #E3A69C; }
@@ -148,7 +239,7 @@ h1, h2, h3 { font-family: var(--g-fonte); color: var(--g-ink); margin: 0; font-w
 .legenda span { display: inline-flex; align-items: center; gap: .45rem; }
 .legenda i { width: 12px; height: 12px; border-radius: 3px; display: block; }
 /* o arrastador é neutro: a única barra verde da tela é a do orçamento */
-.scrub { width: 100%; margin-top: var(--g-3); -webkit-appearance: none; appearance: none; background: none; }
+.scrub { width: 100%; height: 2.75rem; margin-top: var(--g-2); -webkit-appearance: none; appearance: none; background: none; }
 .scrub::-webkit-slider-runnable-track { height: 4px; border-radius: 3px; background: #E3E8E3; }
 .scrub::-moz-range-track { height: 4px; border-radius: 3px; background: #E3E8E3; }
 .scrub::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--g-ink); border: 3px solid #fff; box-shadow: var(--g-e1); margin-top: -9px; }
@@ -251,3 +342,72 @@ details p { color: var(--g-suave); padding-bottom: var(--g-5); max-width: 62ch; 
 .pill--verde { background: var(--g-verde-claro); color: #136B46; }
 .pill--ouro { background: #FFF4D6; color: #8A6108; }
 .pill--cinza { background: var(--g-soft); color: var(--g-suave); }
+
+/* --------------------------------------------------- ritmo e correcoes -- */
+/* a barra e fixa: sem isto toda ancora aterrissa atras dela */
+[id] { scroll-margin-top: 5.5rem; }
+
+/* faixa tintada precisa de mais respiro que secao branca: nela o ar e visivel */
+.faixa, .escuro { padding-block: calc(var(--g-secao) * 1.22); }
+.secao--ar { padding-block: calc(var(--g-secao) * 1.3); }
+.secao--denso { padding-block: calc(var(--g-secao) * .82); }
+.cabeca { margin-bottom: clamp(2rem, 4.5vw, 3.25rem); }
+
+@media (max-width: 640px) {
+  /* painel sangrando devolve 68px de largura util no celular */
+  .painel--sangra {
+    margin-inline: calc(var(--g-gutter) * -1);
+    border-radius: 0; border-inline: 0; box-shadow: none;
+  }
+}
+@media (max-width: 520px) {
+  .acoes { display: grid; grid-template-columns: 1fr; gap: var(--g-3); }
+  .acoes .btn { width: 100%; }
+  .campo { flex-wrap: wrap; }
+  .campo .btn { flex: 1 0 100%; margin-top: .4rem; }
+}
+/* alvos de toque */
+.menu-btn { min-height: 44px; padding-inline: 1rem; }
+@media (pointer: coarse) {
+  .scrub::-webkit-slider-thumb { width: 28px; height: 28px; margin-top: -12px; }
+  .scrub::-moz-range-thumb { width: 28px; height: 28px; }
+  .btn-sm { min-height: 44px; }
+  .campo input { min-height: 44px; }
+  .campo .btn { min-height: 44px; }
+}
+
+/* --------------------------------------------------------- desktop ----- */
+@media (min-width: 1080px) {
+  .hero { text-align: left; padding-block-start: clamp(2rem, 4vw, 3.5rem); }
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+    gap: clamp(2.5rem, 4vw, 4.5rem); align-items: end;
+  }
+  .hero-texto { padding-bottom: clamp(2.5rem, 7vh, 5.5rem); }
+  .hero h1 { font-size: clamp(3rem, 4.4vw, 4.6rem); max-width: 11ch; margin-inline: 0; }
+  .hero .lead { max-width: 34ch; margin-inline: 0; }
+  .acoes { justify-content: flex-start; }
+  .palco { margin-top: 0; --fone-w: clamp(300px, 25vw, 375px); --fone-corte: .60; }
+  .hero .fatos { margin-top: 0; }
+
+  /* quatro recursos do mesmo tamanho rimam; 7/5 alternado quebra a rima */
+  .recursos { grid-template-columns: repeat(12, 1fr); column-gap: var(--g-7); }
+  .recurso:nth-child(1) { grid-column: span 7; }
+  .recurso:nth-child(2) { grid-column: span 5; }
+  .recurso:nth-child(3) { grid-column: span 5; }
+  .recurso:nth-child(4) { grid-column: span 7; }
+
+  .cabeca--trilho {
+    display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: var(--g-7); max-width: none; text-align: left; align-items: end;
+    border-bottom: 1px solid var(--g-linha); padding-bottom: var(--g-5);
+  }
+  .cabeca--trilho .lead { margin: 0; }
+  .escuro .cabeca--trilho { border-bottom-color: rgba(255,255,255,.18); }
+}
+@media (min-width: 760px) {
+  .planos { grid-template-columns: 1.08fr 1fr; align-items: center; }
+  .plano--melhor { transform: translateY(-10px); box-shadow: var(--g-e3), 0 18px 44px -28px rgba(30,138,92,.5); }
+}
+@media (prefers-reduced-motion: reduce) { .plano--melhor { transform: none; } }
+.hero .lead { font-size: clamp(1.12rem, .95rem + .7vw, 1.5rem); }
