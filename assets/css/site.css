@@ -304,6 +304,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--g-3) var(--g-6); align
 footer .links { display: flex; flex-wrap: wrap; gap: var(--g-5); }
 footer .links a, footer a { color: var(--g-suave); }
 footer .copy { margin-left: auto; color: var(--g-fraco); }
+footer .velotti { display: inline-flex; align-items: center; gap: 8px; color: var(--g-fraco); text-decoration: none; }
+footer .velotti img { height: 20px; width: auto; opacity: .7; transition: opacity .15s; }
+footer .velotti:hover img { opacity: 1; }
 
 /* aparecer ao rolar */
 @media (prefers-reduced-motion: no-preference) {
