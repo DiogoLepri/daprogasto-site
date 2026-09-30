@@ -414,3 +414,6 @@ details p { color: var(--g-suave); padding-bottom: var(--g-5); max-width: 62ch; 
 }
 @media (prefers-reduced-motion: reduce) { .plano--melhor { transform: none; } }
 .hero .lead { font-size: clamp(1.12rem, .95rem + .7vw, 1.5rem); }
+
+/* idiomas */
+footer .idiomas a[aria-current="page"] { color: var(--g-ink); font-weight: 600; text-decoration: none; }

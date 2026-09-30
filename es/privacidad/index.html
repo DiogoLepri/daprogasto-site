@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidad — Dá pro gasto?</title>
+  <meta name="description" content="Cómo Dá pro gasto? trata tus datos: guardados en tu cuenta, en la nube, solo tú tienes acceso, y qué envía el chat.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="alternate" hreflang="pt-BR" href="../../privacidade/">
+  <link rel="alternate" hreflang="en" href="../../en/privacy/">
+  <link rel="alternate" hreflang="es" href="./">
+  <link rel="icon" href="../../assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../assets/img/mark.svg" alt="" aria-hidden="true" width="26" height="26">Dá pro gasto?</a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="../#como">Cómo funciona</a>
+        <a href="../#mes">El mes completo</a>
+        <a href="../#preco">Precio</a>
+        <a href="../soporte/">Soporte</a>
+      </nav>
+      <a class="btn btn-dark btn-sm nav-cta" href="../#preco">Prueba 1 mes gratis</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu-mobile">Menú</button>
+    </div>
+    <nav id="menu-mobile" class="nav-mobile" aria-label="Secciones (celular)">
+      <a href="../#como">Cómo funciona</a>
+      <a href="../#mes">El mes completo</a>
+      <a href="../#recursos">Funciones</a>
+      <a href="../#preco">Precio</a>
+      <a href="../#perguntas">Preguntas</a>
+      <a href="../soporte/">Soporte</a>
+      <a class="btn btn-dark" href="../#preco">Prueba 1 mes gratis</a>
+    </nav>
+  </header>
+  <main class="doc">
+    <div class="wrap">
+      <h1>Política de privacidad</h1>
+      <p class="meta">Vigente desde el 30 de septiembre de 2026. Responsable del tratamiento: Diogo Lepri Moreira, <a href="mailto:contact.velotti@gmail.com">contact.velotti@gmail.com</a>.</p>
+      <p>Esta política explica, en palabras sencillas, lo que la app hace y lo que no hace con tus datos. La regla que guía todo: tus datos son tuyos. Quedan guardados en tu cuenta, en la nube, solo tú tienes acceso a ellos y nunca se venden ni se usan para publicidad.</p>
+
+      <h2>1. Qué guarda la app</h2>
+      <p>Movimientos, cuentas, tarjetas, cuotas, categorías, presupuestos, movimientos fijos, metas, reglas de categorización aprendidas, avisos de los agentes, historial del chat y ajustes se guardan en una base de datos dentro de la app, para que funcione incluso sin internet, y también en tu cuenta, en la nube (consulta el punto 3).</p>
+
+      <h2>2. Cuenta</h2>
+      <p>Para usar la app necesitas una cuenta, porque ahí es donde se guardan tus datos. Guardamos tu correo y una contraseña protegida, para que puedas volver a entrar desde cualquier dispositivo. Si entras con Apple o con Google, solo recibimos de ellos el correo (que, en el caso de Apple, puede ser una dirección de reenvío que oculta la tuya) y, la primera vez que entras con Apple, tu nombre de pila. La autenticación la opera Supabase, con servidores en la región de Sudamérica, bajo un contrato que le impide usar los datos para cualquier otro fin. Al crear la cuenta no se envía ningún dato financiero.</p>
+
+      <h2>3. Tus datos en la nube</h2>
+      <p>Una copia de tus datos (movimientos, cuentas, categorías, presupuestos, fijos, metas y algunos ajustes) se guarda en tu cuenta automáticamente, unos segundos después de cada cambio, para que no pierdas nada y encuentres todo al entrar desde otro dispositivo. Cada envío reemplaza al anterior. El acceso está protegido: cada cuenta solo ve sus propios datos. La copia se borra junto con la cuenta, cuando la eliminas en Ajustes → Cuenta.</p>
+
+      <h2>4. Chat sobre tus gastos</h2>
+      <p>Cuando envías una pregunta en el chat, la app arma un resumen de tus números (totales del ciclo, gastos por categoría, presupuestos, saldos de las cuentas, resumen de la tarjeta, próximas cuotas, suscripciones detectadas y los últimos 40 movimientos, con la descripción abreviada) y lo envía, junto con la pregunta, a una función en nuestro servidor. Esa función pasa el conjunto a Google (modelo Gemini), proveedor del modelo de IA, que genera la respuesta; si Google no está disponible, la misma pregunta va a Anthropic (modelo Claude), que no usa el contenido para entrenar modelos. Hoy usamos el nivel gratuito de la API de Google, cuyos términos permiten que Google use el contenido enviado para mejorar sus productos y modelos, incluso con revisión humana; por eso, no escribas en el chat nada que no quieras que salga del dispositivo. No guardamos la pregunta, el resumen ni la respuesta; solo guardamos cuántas preguntas hiciste en el día, para aplicar el límite de 30. El historial de la conversación queda en el dispositivo. No se envía nada sin que toques enviar, y la app te lo advierte antes de la primera pregunta.</p>
+
+      <h2>4.1 Lectura de extractos en PDF</h2>
+      <p>Cuando importas un extracto o un resumen de tarjeta en PDF, el archivo se envía a una función en nuestro servidor, que lo pasa a Anthropic (modelo Claude) para extraer los movimientos y sugerir categorías. Anthropic no usa ese contenido para entrenar modelos. No guardamos el PDF ni el resultado en el servidor: los movimientos vuelven a la app, los revisas en la pantalla de revisión y solo entonces se agregan. Los extractos en OFX y CSV se leen en el propio dispositivo, sin enviarse.</p>
+
+      <h2>5. Notificaciones</h2>
+      <p>El recordatorio diario, el resumen del domingo y los avisos de los agentes son notificaciones locales, programadas y enviadas por el propio dispositivo. No hay un servidor de notificaciones y ningún dato sale de la app para eso.</p>
+
+      <h2>6. Suscripción</h2>
+      <p>El cobro lo hace la App Store o Google Play, en tu cuenta de la tienda. Para saber si la suscripción está activa, la app usa RevenueCat, que recibe de la tienda un identificador anónimo y el recibo de la compra. RevenueCat no recibe tus movimientos ni el correo de tu cuenta en la app.</p>
+
+      <h2>7. Copias que hace el sistema del dispositivo</h2>
+      <p>iOS (a través de iCloud) y Android (a través de Google Drive) pueden copiar los datos de las apps del dispositivo, según tu configuración. Eso lo controlas tú, en el sistema, y no pasa por nosotros.</p>
+
+      <h2>8. Lo que no hacemos</h2>
+      <ul>
+        <li>No pedimos contraseña, acceso ni conexión con tu banco.</li>
+        <li>No mostramos anuncios.</li>
+        <li>No vendemos, alquilamos ni compartimos datos con terceros para publicidad.</li>
+        <li>No usamos rastreadores de análisis de comportamiento dentro de la app.</li>
+      </ul>
+
+      <h2>9. Cómo borrar</h2>
+      <p>En Ajustes → Cuenta → Eliminar mi cuenta, la cuenta, tus datos en la nube y el conteo de preguntas del chat se borran definitivamente del servidor, y el dispositivo queda limpio. Al cerrar sesión, los datos del dispositivo también se borran; siguen en tu cuenta y vuelven cuando inicias sesión de nuevo.</p>
+
+      <h2>10. Tus derechos (LGPD)</h2>
+      <p>En los términos del art. 18 de la Ley 13.709/2018 (LGPD, Ley General de Protección de Datos de Brasil), puedes confirmar la existencia del tratamiento, acceder a tus datos, corregirlos, llevarlos a otro servicio y eliminarlos, y revocar consentimientos. Buena parte de eso lo haces tú mismo, en la app: ver, corregir, exportar en hoja de cálculo y eliminar. Para cualquier otra solicitud sobre los datos en el servidor (correo, datos de la cuenta, conteo del chat), escribe a <a href="mailto:contact.velotti@gmail.com">contact.velotti@gmail.com</a>. Ese es también el canal del encargado de protección de datos.</p>
+
+      <h2>11. Menores de edad</h2>
+      <p>La app no está dirigida a menores de 18 años y no recopila a sabiendas datos de menores.</p>
+
+      <h2>12. Cambios</h2>
+      <p>Si esta política cambia, se actualiza la fecha de arriba y, cuando el cambio sea relevante, la app te avisa. La versión vigente es siempre esta página.</p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../assets/img/mark.svg" alt="" aria-hidden="true" width="26" height="26">Dá pro gasto?</a>
+      <nav class="links" aria-label="Pie de página">
+        <a href="../privacidad/">Privacidad</a>
+        <a href="../terminos/">Términos</a>
+        <a href="../soporte/">Soporte</a>
+        <a href="mailto:contact.velotti@gmail.com">contact.velotti@gmail.com</a>
+      </nav>
+      <nav class="idiomas" aria-label="Idioma">
+        <a href="../../privacidade/" hreflang="pt-BR" lang="pt-BR">Português</a> · <a href="../../en/privacy/" hreflang="en" lang="en">English</a> · <a href="./" hreflang="es" lang="es" aria-current="page">Español</a>
+      </nav>
+      <a class="velotti" href="https://velotti.com.br" target="_blank" rel="noopener">Desarrollado por <img src="../../assets/img/velotti.png" alt="Velotti" width="70" height="20"></a>
+      <span class="copy">Hecho en Brasil · © <span data-year>2026</span></span>
+    </div>
+  </footer>
+  <script src="../../assets/js/site.js"></script>
+</body>
+</html>
