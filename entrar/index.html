@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abrindo o app — Dá pro gasto?</title>
+  <meta name="description" content="Página que leva o link do e-mail de volta para o app Dá pro gasto?.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../assets/img/mark.svg" alt="" aria-hidden="true" width="26" height="26">Dá pro gasto?</a>
+    </div>
+  </header>
+  <main class="doc">
+    <div class="wrap">
+      <h1 id="titulo">Abrindo o app…</h1>
+      <p class="meta" id="meta">Seu e-mail foi confirmado. Só um instante.</p>
+      <p id="acao" hidden><a class="btn btn-dark" id="abrir" href="#">Abrir o Dá pro gasto?</a></p>
+      <p id="ajuda" hidden>Não abriu? Este link só funciona no celular onde o app está instalado. Abra este mesmo e-mail por lá e toque no botão de novo.</p>
+      <p id="vencido" hidden>Este link venceu ou já foi usado. Abra o app e entre com o seu e-mail e senha: se ainda faltar confirmar, a gente manda outro.</p>
+      <p id="semlink" hidden>Esta página só serve para o link que chega por e-mail. <a href="../">Voltar ao site.</a></p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../assets/img/mark.svg" alt="" aria-hidden="true" width="26" height="26">Dá pro gasto?</a>
+      <nav class="links" aria-label="Rodapé">
+        <a href="../privacidade/">Privacidade</a>
+        <a href="../termos/">Termos</a>
+        <a href="../suporte/">Suporte</a>
+      </nav>
+      <span class="copy">Feito no Brasil · © <span data-year>2026</span></span>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      // O Supabase confirma o e-mail e manda a pessoa para cá com os tokens no
+      // fragmento (#access_token=...). Repassamos tudo para o app, que abre a
+      // sessão. No computador não há app: explicamos que o toque é no celular.
+      var q = window.location.search || '';
+      var h = window.location.hash || '';
+      var tudo = q + h;
+      var app = 'gasto://auth/confirmed' + q + h;
+      var $ = function (id) { return document.getElementById(id); };
+      function mostrar(id) { $(id).hidden = false; }
+
+      if (/access_token=/.test(tudo)) {
+        $('abrir').href = app;
+        mostrar('acao');
+        window.location.replace(app);
+        setTimeout(function () {
+          $('titulo').textContent = 'Toque para abrir o app';
+          $('meta').textContent = 'Seu e-mail foi confirmado.';
+          mostrar('ajuda');
+        }, 1500);
+      } else if (/error=|error_code=/.test(tudo)) {
+        $('titulo').textContent = 'Este link não vale mais';
+        $('meta').hidden = true;
+        mostrar('vencido');
+      } else {
+        $('titulo').textContent = 'Nada para abrir aqui';
+        $('meta').hidden = true;
+        mostrar('semlink');
+      }
+    })();
+  </script>
+</body>
+</html>
